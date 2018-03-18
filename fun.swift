@@ -51,7 +51,7 @@ func makeIncrementer() -> ((Int) -> Int) {
 }
 
 var increment = makeIncrementer()
-print(increment(7))
+// print(increment(7))
 
 func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
 	for item in list {
@@ -66,4 +66,17 @@ func lessThanTen(number: Int) -> Bool {
 	return number < 10
 }
 var numbers = [20, 19, 11, 12]
-print(hasAnyMatches(list: numbers, condition: lessThanTen))
+// print(hasAnyMatches(list: numbers, condition: lessThanTen))
+
+_ = numbers.map({ (number: Int) -> Int in
+	let result = 3 * number
+	return result	
+})
+
+// print(numbers)
+
+let mappedNumbers = numbers.map({ number in 3 * number })
+print(mappedNumbers)
+
+let sortedNumbers = numbers.sorted { $0 < $1 }
+print(sortedNumbers)
